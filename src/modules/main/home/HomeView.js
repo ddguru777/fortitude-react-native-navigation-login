@@ -4,9 +4,11 @@ import {
   View,
   Button
 } from 'react-native';
+import strings from '../../../styles/strings';
+import colors from '../../../styles/colors';
 
 import Splash from 'react-native-smart-splash-screen';
-
+import RNSButton from "../../../components/Button";
 
 export default class HomeScreen extends React.Component {
   componentDidMount() {
@@ -17,18 +19,25 @@ export default class HomeScreen extends React.Component {
       delay: 500
     });
   }
-  _openArticle = article => {
+  
+  _openAuth = () => {
     this.props.navigation.navigate({
-      routeName: 'Login',
-      params: { ...article },
+      routeName: 'Auth',
+    });
+  };
+
+  handlePressProfile = () => {
+    this.props.navigation.navigate({
+      routeName: 'ProfileNavi',
     });
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Button title = "Home" onPress={() => this._openArticle("item")}/>
-        </View>
+        <RNSButton caption = {strings.PROFILE} onPress={this.handlePressProfile}/>
+        <RNSButton caption = {strings.LOGOUT} onPress={this._openAuth} bgColor={colors.pink} />
+      </View>
     );
   };
 }

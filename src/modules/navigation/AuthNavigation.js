@@ -3,8 +3,8 @@ import { Image, TouchableOpacity } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 import { colors, fonts } from '../../styles';
-import LoginScreen from '../login/LoginViewContainer';
-import HomeScreen from '../home/HomeViewContainer';
+import LoginScreen from '../auth/login/LoginViewContainer';
+import SignupScreen from '../auth/signup/SignupViewContainer';
 
 const headerBackground = require('../../../assets/images/topBarBg.png');
 
@@ -16,10 +16,10 @@ const stackNavigator = createStackNavigator(
         header: null,
       },
     },
-    Home: {
-      screen: HomeScreen,
+    Signup: {
+      screen: SignupScreen,
       navigationOptions: {
-        header: null,
+        title: 'Sign Up',
       },
     },
   },

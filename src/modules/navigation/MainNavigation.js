@@ -2,12 +2,11 @@ import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
-import HomeScreen from '../home/HomeViewContainer';
-import SplashScreen from '../splash/SplashViewContainer';
-import MainTabNavigator from './MainTabNavigator';
-import AuthNavigator from './AuthNavigation';
-
 import { colors, fonts } from '../../styles';
+
+import HomeScreen from '../main/home/HomeViewContainer';
+import ProfileScreen from '../main/profile/ProfileViewContainer';
+import MainTabNavigator from './MainTabNavigator';
 
 const headerBackground = require('../../../assets/images/topBarBg.png');
 
@@ -26,12 +25,6 @@ const stackNavigator = createStackNavigator(
           />
         ),
       }),
-    },
-    Home: {
-      screen: HomeScreen,
-      navigationOptions: {
-        header: null,
-      },
     }
   },
   {
