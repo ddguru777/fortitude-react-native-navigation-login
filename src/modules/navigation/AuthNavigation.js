@@ -2,37 +2,26 @@ import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
-import HomeScreen from '../home/HomeViewContainer';
-import SplashScreen from '../splash/SplashViewContainer';
-import MainTabNavigator from './MainTabNavigator';
-import AuthNavigator from './AuthNavigation';
-
 import { colors, fonts } from '../../styles';
+import LoginScreen from '../login/LoginViewContainer';
+import HomeScreen from '../home/HomeViewContainer';
 
 const headerBackground = require('../../../assets/images/topBarBg.png');
 
 const stackNavigator = createStackNavigator(
   {
-    Main: {
-      screen: MainTabNavigator,
-      navigationOptions: () => ({
-        title: 'Fortitude',
-        headerLeft: null,
-        headerBackground: (
-          <Image
-            style={{ flex: 1 }}
-            source={headerBackground}
-            resizeMode="cover"
-          />
-        ),
-      }),
+    Login: {
+      screen: LoginScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
     Home: {
       screen: HomeScreen,
       navigationOptions: {
         header: null,
       },
-    }
+    },
   },
   {
     defaultNavigationOptions: () => ({

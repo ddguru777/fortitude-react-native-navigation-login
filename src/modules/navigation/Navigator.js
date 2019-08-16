@@ -1,13 +1,32 @@
-import React from 'react';
+import React,  {Component} from 'react';
 
-// import AuthScreen from '../containers/AuthScreen';
+import {
+  createAppContainer, 
+  createSwitchNavigator
+} from 'react-navigation';
 import AppNavigator from './RootNavigation';
+import AuthNavigator from './AuthNavigation';
 
-export default function NavigatorView() {
-  // if (authState.isLoggedIn || authState.hasSkippedLogin) {
-  //     return <AppNavigator />;
-  // }
-  // return <AuthScreen />;
-  console.disableYellowBox = true;
-  return <AppNavigator />;
+const createRootNavigator = (signedIn = false) => {
+  return createSwitchNavigator(
+    {
+      Auth: {
+        screen: AuthNavigator
+      },
+      Main: {
+        screen: AppNavigator
+      }
+    },
+    {
+      initialRouteName: signedIn ? "Main" : "Auth"
+    }
+  );
+};
+
+const AppContainer = createAppContainer(createRootNavigator(true));
+
+export default class App extends Component {
+  render() {
+    return (<AppContainer />);
+  }
 }

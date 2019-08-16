@@ -1,19 +1,22 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   StyleSheet,
-  View
+  View,
+  Button
 } from 'react-native';
 
+// import { createStackNavigator, createAppContainer } from 'react-navigation';
+
 import Splash from 'react-native-smart-splash-screen';
+// import AppNavigator from '../navigation/RootNavigation';
+
+// const MainNavigator = createStackNavigator( {
+//   Home: {screen: AppNavigator},
+//   Auth: {screen: LoginScreen}
+// });
 
 export default class LoginScreen  extends React.Component {
 
-  constructor() {
-    super();
-    
-    this.state = {
-    };
-  }
 
   componentDidMount() {
     console.log('========= login view constructor ============  ');
@@ -24,16 +27,28 @@ export default class LoginScreen  extends React.Component {
     });
   }
 
-  _openHome = home => {
+  _openHome() {
+    // this.props.navigation.navigate({
+    //   routeName: 'Home',
+    //   params: { ...home },
+    // });
+    // alert('openhome');
+    // return <AppNavigator />;
+
+    this.props.navigation.navigate('Home', {});
+  };
+
+  _openArticle = article => {
     this.props.navigation.navigate({
-      routeName: 'Home',
-      params: { ...home },
+      routeName: 'Main',
+      params: { ...article },
     });
   };
   
   render () {
     return (
       <View style={styles.container}>
+        <Button title = "Login" onPress={() => this._openArticle("item")}/>
       </View>
     );
   };

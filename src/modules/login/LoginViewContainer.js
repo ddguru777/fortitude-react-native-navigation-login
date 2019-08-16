@@ -1,7 +1,7 @@
 import { compose, withState } from 'recompose';
 
-import SplashScreen from './LoginView';
+import LoginScreen from './LoginView';
 
 export default compose(withState('isExtended', 'setIsExtended', false))(
-  SplashScreen,
+  LoginScreen,
 );
