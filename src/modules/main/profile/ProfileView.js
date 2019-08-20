@@ -5,6 +5,7 @@ import {
   Button
 } from 'react-native';
 
+import styles from '../../../styles/common'; 
 import strings from '../../../styles/strings';
 import colors from '../../../styles/colors';
 import RNSButton from "../../../components/Button";
@@ -29,15 +30,3 @@ export default class ProfileScreen extends React.Component {
     );
   };
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  bgImage: {
-    flex: 1,
-    marginHorizontal: -20,
-  }
-});

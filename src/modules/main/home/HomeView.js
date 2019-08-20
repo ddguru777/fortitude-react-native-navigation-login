@@ -4,6 +4,8 @@ import {
   View,
   Button
 } from 'react-native';
+
+import styles from '../../../styles/common'; 
 import strings from '../../../styles/strings';
 import colors from '../../../styles/colors';
 
@@ -41,15 +43,3 @@ export default class HomeScreen extends React.Component {
     );
   };
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  bgImage: {
-    flex: 1,
-    marginHorizontal: -20,
-  }
-});
