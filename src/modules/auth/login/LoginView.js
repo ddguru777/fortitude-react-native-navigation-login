@@ -61,7 +61,7 @@ export default class LoginScreen  extends React.Component {
   keyboardWillHide = (event) => {
     Animated.timing(this.imageHeight, {
       duration: event.duration,
-      toValue: IMAGE_HEIGHT,
+      toValue: IMAGE_HEIGHT_LOGIN,
     }).start();
   };
 
@@ -74,7 +74,7 @@ export default class LoginScreen  extends React.Component {
 
   keyboardDidHide = (event) => {
     Animated.timing(this.imageHeight, {
-      toValue: IMAGE_HEIGHT,
+      toValue: IMAGE_HEIGHT_LOGIN,
     }).start();
   };
   

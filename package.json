@@ -7,6 +7,7 @@
     "test": "jest",
     "test:update": "jest -u",
     "test:coverage": "jest --coverage",
+    "build": "babel src -d lib",
     "run:ios": "react-native run-ios",
     "run:android": "react-native run-android",
     "lint": "./node_modules/eslint/bin/eslint.js src",
